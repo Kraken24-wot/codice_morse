@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertitore Testo -> Codice Morse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Convertitore <span>Morse</span></h1>
+    </header>
+
+    <div class="converter-box">
+      <div class="input-group">
+        <label for="text-input">Testo di origine</label>
+        <textarea id="text-input" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+      </div>
+
+      <div class="output-group">
+        <label for="morse-output">Traduzione in Morse</label>
+        <textarea id="morse-output" readonly placeholder="Il risultato apparirà qui..."></textarea>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
