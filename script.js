@@ -15,6 +15,7 @@ const convertBtn = document.getElementById('convert-btn');
 const clearBtn = document.getElementById('clear-btn');
 
 function translateToMorse() {
+  if (!input || !output) return;
   const text = input.value.toUpperCase();
   const morse = text.split('')
     .map(char => morseAlphabet[char] || char)
@@ -22,10 +23,17 @@ function translateToMorse() {
   output.value = morse;
 }
 
-convertBtn.addEventListener('click', translateToMorse);
-input.addEventListener('input', translateToMorse);
+if (input) {
+  input.addEventListener('input', translateToMorse);
+}
 
-clearBtn.addEventListener('click', () => {
-  input.value = '';
-  output.value = '';
-});
+if (convertBtn) {
+  convertBtn.addEventListener('click', translateToMorse);
+}
+
+if (clearBtn) {
+  clearBtn.addEventListener('click', () => {
+    if (input) input.value = '';
+    if (output) output.value = '';
+  });
+}
